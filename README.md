@@ -1,0 +1,4 @@
+screenrc
+========
+
+My .screenrc
