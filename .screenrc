@@ -99,9 +99,6 @@ bind } history
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
 
-# no annoying audible bell, please
-vbell on
-
 # detach on hangup
 autodetach on
 
@@ -250,11 +247,3 @@ hardstatus string "[screen %n%?: %t%?] %h"
 # idle 30 blanker
 
 escape "^pP"
-
-bufferfile /home/martinb2/tmp/screen-exchange
-
-# set the second mark, write to the screen-exchange
-# file, and use xsel to synchronize the paste buffer
-# with the X selection.
-# MB 2008-06-18 - Investigate - seems to mess things up
-# bindkey -m > eval "stuff ' '" writebuf "exec sh -c 'xsel -n < ~/tmp/screen-exchange'"
