@@ -7,6 +7,7 @@
 #
 
 
+
 #startup_message off
 
 #defflow on # will force screen to process ^S/^Q
@@ -19,7 +20,7 @@ vbell off
 # all termcap entries are now duplicated as terminfo entries.
 # only difference should be the slightly modified syntax, and check for
 # terminfo entries, that are already corected in the database.
-# 
+#
 # G0 	we have a SEMI-GRAPHICS-CHARACTER-MODE
 # WS	this sequence resizes our window.
 # cs    this sequence changes the scrollregion
@@ -66,7 +67,7 @@ termcap xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 terminfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 
 #
-# Do not use xterms alternate window buffer. 
+# Do not use xterms alternate window buffer.
 # This one would not add lines to the scrollback buffer.
 #termcap xterm|xterms|xs ti=\E7\E[?47l
 #terminfo xterm|xterms|xs ti=\E7\E[?47l
@@ -166,6 +167,10 @@ termcapinfo   xterm 'XC=K%,%\E(B,[\304,\\\\\326,]\334,{\344,|\366,}\374,~\337'
 # xterm-52 tweaks:
 # - uses background color for delete operations
 termcapinfo xterm* be
+
+attrcolor b ".I"    # allow bold colors - necessary for some reason
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+defbce on    # use current bg color for erased chars
 
 ################
 #
